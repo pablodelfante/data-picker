@@ -39,23 +39,31 @@ watch(() => props.modelValue, (newDate) => {
 const grid = ref<CalendarDay[]>(picker.value.getGrid());
 const currentMonthName = ref(picker.value.getMonthName());
 const currentYear = ref(picker.value.getYearString());
+const selectedDateDisplay = ref('');
 
-// Format selected date for the input
-const formattedDate = computed(() => {
-  if (!props.modelValue) return '';
-  return props.modelValue.toLocaleDateString(undefined, {
+// Helper to format a date
+const formatSelectedDate = (date: Date | null) => {
+  if (!date) return '';
+  return date.toLocaleDateString(undefined, {
     year: 'numeric',
     month: 'long',
     day: 'numeric'
   });
-});
+};
 
-// Update the grid and labels whenever we navigate
+// Initialize the display label
+selectedDateDisplay.value = formatSelectedDate(picker.value.getSelectedDate());
+
+// The formatted date comes from internal state synced with the engine
+const formattedDate = computed(() => selectedDateDisplay.value);
+
+// Update the grid and labels whenever we navigate or select
 const updateGrid = () => {
   grid.value = picker.value.getGrid();
   // We manually sync the engine's state with Vue reactivity
   currentMonthName.value = picker.value.getMonthName();
   currentYear.value = picker.value.getYearString();
+  selectedDateDisplay.value = formatSelectedDate(picker.value.getSelectedDate());
 };
 
 // Navigation methods

@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
 import DatePicker from './components/DatePicker.vue';
-
-const selectedDate = ref<Date | null>(null);
 </script>
 
 <template>
@@ -18,11 +15,7 @@ const selectedDate = ref<Date | null>(null);
       </header>
 
       <section class="picker-container">
-        <DatePicker v-model="selectedDate" />
-        
-        <div v-if="selectedDate" class="selection-info">
-          <p>Selected timestamp: <code>{{ selectedDate.getTime() }}</code></p>
-        </div>
+        <DatePicker />
       </section>
 
       <footer>
