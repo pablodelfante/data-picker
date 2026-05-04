@@ -1,0 +1,53 @@
+:root {
+  --text: #2d3436;
+  --text-h: #000000;
+  --bg: #ffffff;
+  --border: #f1f2f6;
+  --code-bg: #f5f6fa;
+  --accent: #6c5ce7;
+  --accent-bg: rgba(108, 92, 231, 0.1);
+  --accent-border: rgba(108, 92, 231, 0.5);
+  --shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
+
+  --sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --heading: 'Outfit', system-ui, -apple-system, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  font: 18px/1.6 var(--sans);
+  letter-spacing: -0.01em;
+  color-scheme: light dark;
+  color: var(--text);
+  background: radial-gradient(circle at top left, #fdfdfd, #f5f6fa);
+  min-height: 100vh;
+  margin: 0;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #a4b0be;
+    --text-h: #ffffff;
+    --bg: #0f0f13;
+    --border: #1e1e24;
+    --code-bg: #16161d;
+    --accent: #a29bfe;
+    --accent-bg: rgba(162, 155, 254, 0.1);
+    --accent-border: rgba(162, 155, 254, 0.4);
+    --social-bg: rgba(30, 30, 36, 0.6);
+    --shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+    background: radial-gradient(circle at top left, #1a1a24, #0f0f13);
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading);
+  color: var(--text-h);
+}
