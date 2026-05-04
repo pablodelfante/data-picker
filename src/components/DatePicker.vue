@@ -1,39 +1,22 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted, watch } from 'vue';
+import { ref, computed, onMounted, onUnmounted } from 'vue';
 import Picker, { type CalendarDay } from '../core/picker';
 
 // Props for the component
 const props = defineProps({
-  modelValue: {
-    type: Date,
-    default: null
-  },
   placeholder: {
     type: String,
     default: 'Select a date'
   }
 });
 
-const emit = defineEmits(['update:modelValue']);
-
 // Initialize the Logic Engine
-const picker = ref(new Picker(props.modelValue || new Date()));
+const picker = ref(new Picker(new Date()));
 
 // UI State
 const isOpen = ref(false);
 const inputRef = ref<HTMLInputElement | null>(null);
 const popoverRef = ref<HTMLDivElement | null>(null);
-
-// Watch for external changes to modelValue
-watch(() => props.modelValue, (newDate) => {
-  if (newDate) {
-    // Update selection and sync the view to the new date's month
-    picker.value.selectDate(newDate);
-    // Reflect the month of the selected date in the navigation view
-    picker.value.setViewDate(newDate); 
-    updateGrid();
-  }
-}, { immediate: true });
 
 // Derived state from the engine
 const grid = ref<CalendarDay[]>(picker.value.getGrid());
@@ -81,7 +64,6 @@ const selectDate = (day: CalendarDay) => {
   picker.value.selectDate(day.date);
   // Ensure the view jumps to the month of the selected date if it was a padding day
   picker.value.setViewDate(day.date);
-  emit('update:modelValue', day.date);
   updateGrid();
   isOpen.value = false; // Close after selection
 };
