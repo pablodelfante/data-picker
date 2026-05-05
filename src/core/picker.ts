@@ -9,10 +9,6 @@ export interface CalendarDay {
     isWeekend: boolean;
 }
 
-/**
- * Headless Date Picker Logic Engine
- * Handles the state and logic for calendar generation and navigation
- */
 class Picker {
     private viewDate: Date;
     private selectedDate: Date | null = null;
