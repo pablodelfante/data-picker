@@ -4,10 +4,14 @@ A functional Date Picker component where the core logic is entirely decoupled fr
 
 ### 1. State Management & Decoupling
 
-The project follows a **Logic Engine** pattern. All calendar calculations (grid generation, month/year navigation, selection state) reside in the `Picker` class (`src/core/picker.ts`).
+The project consume a external package for the logic of the datapicker, this package is `src-datapicker-lib`.
+With this implementation we can use this logic in other frameworks, publish this package to npm, etc, be imaginative with the implementation and posibilities :D
 
-- **Zero Dependencies**: The engine uses native Web APIs only.
-- **Bridge to Vue**: The Vue component (`DatePicker.vue`) initializes the logic engine and uses local reactive references to synchronize the engine's state with the UI. When the user interacts with the UI, the engine is updated, and the grid is re-generated and pushed back into Vue's reactivity system.
+I put comments on the library cretion to read the code and understand the logic and how it works.
+
+Gemini flash was used with antigravity to help to coding this project and solve some doubts :D
+
+The styles setted are the basic inherit on the project vue started.
 
 ### 2. Temporal API Observations
 
@@ -16,29 +20,18 @@ While the challenge encouraged the use of the **Temporal API**, it is currently 
 - **Implementation Choice**: I used the legacy `Date` object to maintain the "Zero Dependencies" requirement.
 - **Observations**: Using `Temporal` would significantly simplify calculations. For instance, `Temporal.PlainDate` handles month overflows automatically and provides an immutable API that prevents accidental state mutations, which is a common source of bugs with the legacy `Date` object.
 
-### 3. Styling & Aesthetics
-
-- **Design System**: Built using CSS Custom Properties (Variables) defined in `src/style.css`.
-- **UX/UI**: Features a premium look with glassmorphism, smooth transitions, and responsive design.
-- **A11y**: Supports `Esc` to close and basic keyboard navigation hints.
-
 ## 🛠️ How to Run
 
-1. **Install Dependencies**:
+1. **Fast Install Dependencies and dev**:
 
     ```bash
-    npm install
+    npm run install:lib-and-dev
     ```
 
-2. **Start Development Server**:
+    only run dev (if dependencies are installed)
 
     ```bash
     npm run dev
-    ```
-
-3. **Build for Production**:
-    ```bash
-    npm run build
     ```
 
 ## 📂 Project Structure
@@ -47,3 +40,5 @@ While the challenge encouraged the use of the **Temporal API**, it is currently 
 - `src/components/DatePicker.vue`: The Vue 3 Wrapper.
 - `src/App.vue`: Main demo application.
 - `src/style.css`: Global theme variables.
+
+_Made with ❤️ and a lot of imagination. Happy coding!_ ✨

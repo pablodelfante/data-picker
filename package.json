@@ -7,7 +7,8 @@
     "dev:vue": "vite",
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview",
-    "dev": "concurrently --kill-others \"npm run dev:vue\" \"cd ./src-datapicker-lib && npm run dev\""
+    "dev": "concurrently --kill-others \"npm run dev:vue\" \"cd ./src-datapicker-lib && npm run dev\"",
+    "install:lib-and-dev": "npm install ./src-datapicker-lib && npm run dev"
   },
   "dependencies": {
     "datapicker-lib": "file:src-datapicker-lib",

@@ -1,0 +1,3 @@
+- add vitest for library
+- add docker compose to easy dev exp
+- other
