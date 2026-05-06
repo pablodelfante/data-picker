@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue';
-// import Picker, { type CalendarDay } from '../core/picker';
 import CalendarHeader from './CalendarHeader.vue';
 import CalendarGrid from './CalendarGrid.vue';
 import {  Picker, CalendarDay  } from "datapicker-lib";

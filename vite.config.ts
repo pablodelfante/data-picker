@@ -10,7 +10,7 @@ export default defineConfig({
     },
     server: {
         watch: {
-            ignored: isDev ? :["!**/node_modules/datapicker-lib/**"] : [],
+            ignored: isDev ? ["!**/node_modules/datapicker-lib/**"] : [],
         },
     },
 });
