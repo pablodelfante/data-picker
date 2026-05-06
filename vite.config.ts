@@ -12,5 +12,8 @@ export default defineConfig({
         watch: {
             ignored: isDev ? ["!**/node_modules/datapicker-lib/**"] : [],
         },
+        host: "0.0.0.0",
+        port: 5173,
+        strictPort: true,
     },
 });
