@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "datapicker-lib": "file:src-datapicker-lib",
     "vue": "^3.5.32"
   },
   "devDependencies": {
