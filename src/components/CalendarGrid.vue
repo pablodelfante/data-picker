@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import type { CalendarDay } from '../core/picker';
+import type { CalendarDay } from "datapicker-lib";
+
 
 defineProps<{
   grid: CalendarDay[];

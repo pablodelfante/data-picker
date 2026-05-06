@@ -2,7 +2,7 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue';
 import CalendarHeader from './CalendarHeader.vue';
 import CalendarGrid from './CalendarGrid.vue';
-import {  Picker, CalendarDay  } from "datapicker-lib";
+import {  Picker, type CalendarDay  } from "datapicker-lib";
 
 // Props for the component
 const props = defineProps({
