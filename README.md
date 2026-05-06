@@ -34,6 +34,12 @@ While the challenge encouraged the use of the **Temporal API**, it is currently 
     npm run dev
     ```
 
+    option with compose
+
+    ```bash
+    docker compose up
+    ```
+
 ## 📂 Project Structure
 
 - `src/core/picker.ts`: The Headless Logic Engine (Pure TS).
