@@ -42,7 +42,7 @@ While the challenge encouraged the use of the **Temporal API**, it is currently 
 
 ## 📂 Project Structure
 
-- `src/core/picker.ts`: The Headless Logic Engine (Pure TS).
+- `src-datapicker-lib/src/picker.ts`: The Headless Logic Engine (Pure TS).
 - `src/components/DatePicker.vue`: The Vue 3 Wrapper.
 - `src/App.vue`: Main demo application.
 - `src/style.css`: Global theme variables.
